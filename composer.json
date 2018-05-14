@@ -1,0 +1,15 @@
+{
+	"name" : "jenskooij/wordvector",
+	"type" : "project",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Jens Kooij",
+			"email" : "jenskooij1988@gmail.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"JensKooij\\WordVector\\" : "src"
+		}
+	}
+}
