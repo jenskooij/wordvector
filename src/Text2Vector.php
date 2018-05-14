@@ -138,7 +138,7 @@ class Text2Vector
             $word = $sampleArray[0];
             $similarWord = $sampleArray[1];
 
-            $resultModel->addSimilarWord($word, $similarWord);
+            $resultModel->addRelatedWord($word, $similarWord);
         }
 
         $this->resultModel = $resultModel;
@@ -167,8 +167,4 @@ class Text2Vector
     {
         $this->stopWords = $stopWords;
     }
-
-
-
-
 }

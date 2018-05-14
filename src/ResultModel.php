@@ -10,20 +10,33 @@ class ResultModel
 {
     protected $words = array();
 
-    public function addSimilarWord($word, $similarWord)
+    /**
+     * Add a relatedWord related to a word, based on its appearance with
+     * the window of the word
+     *
+     * @param $word
+     * @param $relatedWord
+     */
+    public function addRelatedWord($word, $relatedWord)
     {
-        if (isset($this->words[$word][$similarWord])) {
-            $this->words[$word][$similarWord] += 1;
+        if (isset($this->words[$word][$relatedWord])) {
+            $this->words[$word][$relatedWord] += 1;
         } else {
-            $this->words[$word][$similarWord] = 1;
+            $this->words[$word][$relatedWord] = 1;
         }
     }
 
-    public function getSimilarWordsFor($word)
+    /**
+     * Returns an array of related keywords, ordered by the number of times a related
+     * word has appeared within the window of the input
+     * @param $input
+     * @return array
+     */
+    public function getRelatedWordsFor($input)
     {
-        if (isset($this->words[$word])) {
-            arsort($this->words[$word]);
-            return $this->words[$word];
+        if (isset($this->words[$input])) {
+            arsort($this->words[$input]);
+            return $this->words[$input];
         }
         return array();
     }
